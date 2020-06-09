@@ -6,9 +6,9 @@ type DiscountProps = {
 
 const Discount = () => {
   return (
-    <>
-
-    </>
+    <div>
+      discount
+    </div>
   );
 }
 

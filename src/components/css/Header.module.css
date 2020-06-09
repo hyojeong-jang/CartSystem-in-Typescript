@@ -1,0 +1,52 @@
+* {
+  color: rgb(104, 103, 103);
+  font-size: 15px;
+}
+
+.container {
+  width: 100%;
+  height: 12%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.datetime {
+  font-weight: 300;
+  font-size: 13px;
+  color: #999;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 3%;
+  height: 45%;
+}
+
+.itemButton {
+  width: 40%;
+  background-color: #ccff99;
+  color: #81aa57;
+  text-decoration: none;
+}
+
+.discountButton {
+  width: 40%;
+  background-color: #ffcc99;
+  color: #b18050;
+  text-decoration: none;
+}

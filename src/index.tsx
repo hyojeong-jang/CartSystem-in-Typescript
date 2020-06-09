@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import App from './App';
+import Root from './routes/index';
 import rootReducer from './reducers/index'
 
-import * as serviceWorker from './serviceWorker';
 
 const store = createStore(
   rootReducer
@@ -14,9 +13,8 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Root />
   </Provider>,
   document.getElementById('root') as HTMLElement
 );
 
-serviceWorker.unregister();

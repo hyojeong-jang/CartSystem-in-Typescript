@@ -1,17 +1,14 @@
 import React from 'react';
 
 import Header from './components/Header'
-import Item from './components/Item';
-import Discount from './components/Discount';
 import Cart from './components/Cart';
 
+import styles from './App.module.css';
 
 function App() {
   return (
-    <div className='App'>
-      <Header name='Hyojeong' />
-      <Item />
-      <Discount />
+    <div className={styles.App}>
+      <Header name='장효정' />
       <Cart />
     </div>
   );
