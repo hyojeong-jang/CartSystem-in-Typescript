@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import * as reduxLogger from 'redux-logger';
 
 import Root from './routes/index';
-import rootReducer from './reducers/index'
+import StoreState from './reducers/index'
 
+const middleware = [];
+
+if (process.env.NODE_ENV !== "production") {
+  middleware.push(reduxLogger.createLogger());
+}
 
 const store = createStore(
-  rootReducer
+  StoreState,
+  applyMiddleware(...middleware)
 );
 
 ReactDOM.render(
