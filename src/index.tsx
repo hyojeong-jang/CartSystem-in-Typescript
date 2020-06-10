@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import * as reduxLogger from 'redux-logger';
 
 import Root from './routes/index';
-import StoreState from './reducers/index'
+import { rootState } from './modules/index'
 
 const middleware = [];
 
@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const store = createStore(
-  StoreState,
+  rootState,
   applyMiddleware(...middleware)
 );
 

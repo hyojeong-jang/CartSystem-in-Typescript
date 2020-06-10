@@ -5,7 +5,7 @@ import Header from './components/Header'
 import Cart from './components/Cart';
 
 import api from './api/index';
-import { fetchData } from './actions/index';
+import { fetchData } from './modules/options';
 
 import styles from './App.module.css';
 

@@ -32,8 +32,8 @@ export const optionsReducer = (
         currency_code: action.payload.currency_code,
         discounts: action.payload.discounts,
         items: action.payload.items
-      }
+      };
     default:
-      return state
+      return state;
   }
 }
