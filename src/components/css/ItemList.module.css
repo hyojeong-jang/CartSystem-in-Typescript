@@ -1,0 +1,23 @@
+* {
+  color: rgb(104, 103, 103);
+  font-size: 15px;
+}
+
+.container {
+  width: 90%;
+  height: 10%;
+  text-align: left;
+  padding: 10px 20px;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.price {
+  font-weight: 300;
+}
+
+.count {
+  font-weight: 300;
+}
