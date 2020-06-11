@@ -6,18 +6,33 @@
 .container {
   width: 90%;
   height: 10%;
-  text-align: left;
   padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.innerContainer {
+  display: flex;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.checkbox {
+  margin-right: 20px;
 }
 
 .name {
   font-weight: 500;
 }
 
-.price {
+.price, .count {
   font-weight: 300;
 }
-
-.count {
-  font-weight: 300;
+.price {
+  font-size: 13px;
 }

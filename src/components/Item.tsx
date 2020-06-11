@@ -1,26 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useItems from '../hooks/useItems';
 
-import Header from './MenuHeader'
+import Header from './MenuHeader';
+import Footer from './Footer';
 import ItemList from '../components/ItemList';
 import styles from './css/Item.module.css';
 
 const Item = () => {
   const items = useItems();
+  const [ count, setCount ] = useState(1);
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <Header title='시술 메뉴' />
+      <Header title='시술 메뉴' />
+      <div className={styles.itemContainer}>
+        <div>
+          {Object.keys(items).map((key, idx) => (
+            <ItemList
+              key={idx}
+              name={items[key].name}
+              price={items[key].price}
+              count={items[key].count}
+            />
+          ))}
+        </div>
       </div>
-      {Object.keys(items).map((key, idx) => (
-        <ItemList
-          key={idx}
-          name={items[key].name}
-          price={items[key].price}
-          count={items[key].count}
-        />
-      ))}
+      <Footer />
     </div>
   );
 }

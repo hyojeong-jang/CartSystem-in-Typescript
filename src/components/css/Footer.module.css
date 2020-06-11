@@ -1,0 +1,19 @@
+.text {
+  font-size: 13px;
+}
+
+.container {
+  text-align: center;
+  background-color: aliceblue;
+}
+
+.nextButton {
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.nextContainer {
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,8 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styles from './css/MenuHeader.module.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-type MenuHeaderProps= {
+import styles from './css/MenuHeader.module.css';
+
+type MenuHeaderProps = {
   title: string;
 }
 
