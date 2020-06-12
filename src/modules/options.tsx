@@ -1,4 +1,3 @@
-import { ServerResponse } from '../types/index';
 import * as types from '../types/index';
 
 const FETCH_DATA = 'FETCH_DATA' as const;
@@ -11,7 +10,7 @@ interface FetchData {
 export type actionTypes =
 | FetchData;
 
-export const fetchData = (response: ServerResponse) => ({
+export const fetchData = (response: types.ServerResponse) => ({
   type: FETCH_DATA,
   payload: response
 })
@@ -26,7 +25,7 @@ export const optionsReducer = (
   state = initialState,
   action: actionTypes
 ): types.ServerData => {
-  switch (action.type){
+  switch (action.type) {
     case FETCH_DATA:
       return {
         currency_code: action.payload.currency_code,

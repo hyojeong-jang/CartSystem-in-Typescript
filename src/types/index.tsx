@@ -27,7 +27,7 @@ export interface Discount {
 }
 
 export interface Item {
-  count: number
-  name: string
-  price: number
+  count?: number | null
+  name?: string | null
+  price?: number | null
 }

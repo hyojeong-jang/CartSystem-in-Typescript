@@ -1,19 +1,23 @@
 import React, { useState, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+
 import { Item } from '../types/index';
 import SelectBox from './SelectBox';
+import { fetchItem } from '../modules/cart'
 
 import styles from './css/ItemList.module.css';
 
-export type Selected = {
-  item: string;
-  count: number;
-};
-
 const ItemList = ({ name, price, count }: Item) => {
+  const dispatch = useDispatch();
+
   const [ isChecked, setIsCheck ] = useState<boolean>(false);
-  const [ onSelected, setOnSelected ] = useState<Selected | null>(null);
+  const [ onSelected, setOnSelected ] = useState<number | null>(null);
 
   const onChecked = useCallback(() => setIsCheck(!isChecked), [isChecked]);
+  const setItem = useCallback(() => {
+    setIsCheck(!isChecked);
+    dispatch(fetchItem({ count: onSelected, name, price }));
+  }, [onSelected])
 
   return (
     <>
@@ -21,7 +25,8 @@ const ItemList = ({ name, price, count }: Item) => {
         <div className={styles.innerContainer}>
           <input className={styles.checkbox}
             type='checkbox'
-            value={count}
+            value={String(count)}
+            checked={isChecked}
             onChange={onChecked}
           />
           <div className={styles.text}>
@@ -32,10 +37,12 @@ const ItemList = ({ name, price, count }: Item) => {
       </div>
       {isChecked
         && <SelectBox
-          title='수량'
-          count={count}
+          title='총수'
+          defaultValue={Number(count)}
           buttonText='선택 해제'
           onSelected={setOnSelected}
+          setClose={onChecked}
+          setItem={setItem}
         />
       }
     </>

@@ -1,25 +1,31 @@
 import React from 'react';
+import useSelectBoxActions from '../hooks/useSelectBoxActions'
 
-import styles from './css/Item.module.css';
+import styles from './css/SelectBox.module.css';
 
 type SelectBoxProps = {
   title: string;
-  count: number;
+  defaultValue: number;
   buttonText: string;
-  onSelected: (selected: { item: string, count: number }) => void
+  onSelected: (selected: number) => void;
+  setClose: () => void;
+  setItem: () => void;
 }
 
-const SelectBox = ({ title, count, buttonText, onSelected }: SelectBoxProps) => {
+const SelectBox = ({ title, defaultValue, buttonText, onSelected, setClose, setItem }: SelectBoxProps) => {
   return (
     <div className={styles.container}>
-      <div>{title}</div>
-      <select size={10}>
+      <div className={styles.title}>{title}</div>
+      <select
+        className={styles.select}
+        size={5}
+        onChange={(e) => onSelected(Number(e.target.value))}
+      >
         {Array(100).fill('').map((el, i) => (
-          i + 1 === count
+          i + 1 === defaultValue
           ? <option
             key={i}
             value={i + 1}
-            onClick={() => onSelected({ item: title, count: i + 1 })}
             selected
           >
             {i + 1}
@@ -27,15 +33,24 @@ const SelectBox = ({ title, count, buttonText, onSelected }: SelectBoxProps) => 
           : <option
             key={i}
             value={i + 1}
-            onClick={() => onSelected({ item: title, count: i + 1 })}
           >
             {i + 1}
           </option>
         ))}
       </select>
-      <div>
-        <div>{buttonText}</div>
-        <div >완료</div>
+      <div className={styles.buttonContainer}>
+        <div
+          className={styles.cancelButton}
+          onClick={setClose}
+        >
+          {buttonText}
+        </div>
+        <div
+          className={styles.doneButton}
+          onClick={setItem}
+        >
+          완료
+        </div>
       </div>
     </div>
   );
