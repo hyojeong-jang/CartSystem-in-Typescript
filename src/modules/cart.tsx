@@ -2,10 +2,10 @@ import * as types from '../types/index';
 
 const FETCH_ITEM = 'FETCH_ITEM' as const;
 const DELETE_ITEM = 'DELETE_ITEM' as const;
+const UPDATE_ITEM = 'UPDATE_ITEM' as const;
 
 const FETCH_DISCOUNT = 'FETCH_DISCOUNT' as const;
 const DELETE_DISCOUNT = 'DELETE_DISCOUNT' as const;
-
 
 interface FetchItem {
   type: typeof FETCH_ITEM,
@@ -17,6 +17,10 @@ interface DeleteItem {
   payload: string
 }
 
+interface UpdateItem {
+  type: typeof UPDATE_ITEM,
+  payload: types.Item
+}
 interface FetchDiscount {
   type: typeof FETCH_DISCOUNT,
   payload: types.Discount
@@ -27,9 +31,11 @@ interface DeleteDiscount {
   payload: string
 }
 
+
 export type actionTypes =
 | FetchItem
 | DeleteItem
+| UpdateItem
 | FetchDiscount
 | DeleteDiscount;
 
@@ -40,6 +46,11 @@ export const fetchItem = (item: types.Item) => ({
 
 export const deleteItem = (item: string) => ({
   type: DELETE_ITEM,
+  payload: item
+});
+
+export const updateItem = (item: types.Item) => ({
+  type: UPDATE_ITEM,
   payload: item
 });
 
@@ -72,6 +83,22 @@ export const cartReducer = (
       return {
         ...state,
         items: state.items.filter(item => item.name !== action.payload)
+      };
+    case UPDATE_ITEM:
+      console.log(action.payload, '페이로드')
+      return {
+        ...state,
+        items: state.items.map(item => {
+          if (item.name === action.payload.name) {
+            return {
+              name: item.name,
+              price: item.price,
+              count: action.payload.count
+            };
+          }
+
+          return item;
+        })
       };
     case FETCH_DISCOUNT:
       return {
