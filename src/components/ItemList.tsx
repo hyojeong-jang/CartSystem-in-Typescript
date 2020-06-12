@@ -35,7 +35,7 @@ const ItemList = ({ name, price, count }: Item) => {
     <>
       <div className={styles.container}>
         <div className={styles.innerContainer}>
-          <input className={styles.checkbox}
+          <input
             type='checkbox'
             value={String(count)}
             onChange={onChange}
@@ -46,7 +46,7 @@ const ItemList = ({ name, price, count }: Item) => {
           </div>
         </div>
         {item
-          && <div>{item.count}</div>
+          && <div className={styles.count}>{item.count}</div>
         }
       </div>
       {isOpened

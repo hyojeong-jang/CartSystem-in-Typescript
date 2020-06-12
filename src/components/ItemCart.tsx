@@ -3,8 +3,9 @@ import { useDispatch } from 'react-redux';
 
 import { Item } from '../types/index';
 import SelectBox from './SelectBox'
-import { updateItem, deleteItem } from '../modules/cart'
-;
+import { updateItem, deleteItem } from '../modules/cart';
+
+import styles from './css/ItemCart.module.css';
 
 const ItemCart = ({ name, price, count }: Item) => {
   const dispatch = useDispatch();
@@ -27,14 +28,15 @@ const ItemCart = ({ name, price, count }: Item) => {
   }, [isOpened])
 
   return (
-    <main>
-      <ul>
-        <div>
+    <main className={styles.container}>
+      <ul className={styles.itemContainer}>
+        <div className={styles.text}>
           <span>{name}</span>
-          <span>{price * count}</span>
+          <span className={styles.price}>{price * count}</span>
         </div>
         <div
           onClick={onClick}
+          className={styles.count}
         >
           {count}
         </div>

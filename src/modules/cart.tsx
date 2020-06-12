@@ -85,7 +85,6 @@ export const cartReducer = (
         items: state.items.filter(item => item.name !== action.payload)
       };
     case UPDATE_ITEM:
-      console.log(action.payload, '페이로드')
       return {
         ...state,
         items: state.items.map(item => {

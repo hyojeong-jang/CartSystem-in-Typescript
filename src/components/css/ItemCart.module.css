@@ -1,37 +1,26 @@
 * {
   color: rgb(104, 103, 103);
   font-size: 15px;
+  font-weight: 500;
 }
 
 .container {
-  width: 90%;
-  height: 10%;
   padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
-.innerContainer {
+.itemContainer {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .text {
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
-}
-
-.checkbox {
-  margin-right: 20px;
-}
-
-.name {
-  font-weight: 500;
 }
 
 .price {
-  font-size: 13px;
   font-weight: 300;
 }
 
@@ -44,5 +33,3 @@
   line-height: 30px;
   width: 50px;
 }
-
-
