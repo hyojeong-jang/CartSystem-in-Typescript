@@ -1,5 +1,5 @@
 import React from 'react';
-import useItems from '../hooks/useItems';
+import useOptions from '../hooks/useOptions';
 
 import Header from './MenuHeader';
 import Footer from './Footer';
@@ -7,7 +7,7 @@ import ItemList from '../components/ItemList';
 import styles from './css/Item.module.css';
 
 const Item = () => {
-  const items = useItems();
+  const { items } = useOptions();
 
   return (
     <div className={styles.container}>
