@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useItems from '../hooks/useItems';
 
 import Header from './MenuHeader';
@@ -8,7 +8,6 @@ import styles from './css/Item.module.css';
 
 const Item = () => {
   const items = useItems();
-  const [ count, setCount ] = useState(1);
 
   return (
     <div className={styles.container}>

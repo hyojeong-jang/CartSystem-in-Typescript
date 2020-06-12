@@ -8,11 +8,15 @@ export interface ServerResponse {
 }
 
 export interface ServerData {
-  currency_code: string
+  currency_code?: string
   discounts: DiscountList
   items: ItemList
 }
 
+export interface Cart {
+  items: Item[]
+  discounts: Discount[]
+}
 export interface DiscountList {
   [key: string]: Discount
 }
@@ -27,7 +31,7 @@ export interface Discount {
 }
 
 export interface Item {
-  count?: number | null
-  name?: string | null
-  price?: number | null
+  count: number
+  name: string
+  price: number
 }

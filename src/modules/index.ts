@@ -5,7 +5,7 @@ import { cartReducer as cart } from './cart';
 
 export interface StoreState {
   options: types.ServerData
-  cart: types.Item
+  cart: types.Cart
 }
 
 export const rootState = combineReducers<StoreState>({

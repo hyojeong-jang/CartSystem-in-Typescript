@@ -1,5 +1,4 @@
 import React from 'react';
-import useSelectBoxActions from '../hooks/useSelectBoxActions'
 
 import styles from './css/SelectBox.module.css';
 
@@ -12,7 +11,14 @@ type SelectBoxProps = {
   setItem: () => void;
 }
 
-const SelectBox = ({ title, defaultValue, buttonText, onSelected, setClose, setItem }: SelectBoxProps) => {
+const SelectBox = ({
+  title,
+  defaultValue,
+  buttonText,
+  onSelected,
+  setClose,
+  setItem
+}: SelectBoxProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>{title}</div>
