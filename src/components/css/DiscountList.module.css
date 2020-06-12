@@ -1,0 +1,36 @@
+* {
+  color: rgb(104, 103, 103);
+  font-size: 15px;
+}
+
+.container {
+  width: 90%;
+  height: 10%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.innerContainer {
+  display: flex;
+}
+
+.checkbox {
+  margin-right: 20px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.rate {
+  font-weight: 300;
+  font-size: 13px;
+}
