@@ -16,7 +16,7 @@ const MenuHeader = ({ title }: MenuHeaderProps) => {
         </Link>
       </div>
       <div className={styles.title}>{title}</div>
-      <div>+</div>
+      <div className={styles.add}>+</div>
     </div>
   );
 }

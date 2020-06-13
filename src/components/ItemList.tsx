@@ -5,6 +5,7 @@ import useCart from '../hooks/useCart';
 import { Item } from '../types/index';
 import SelectBox from './SelectBox';
 import { fetchItem, deleteItem } from '../modules/cart'
+import { numberFormat } from '../utils/helper';
 
 import styles from './css/ItemList.module.css';
 
@@ -42,7 +43,7 @@ const ItemList = ({ name, price, count }: Item) => {
           />
           <div className={styles.text}>
             <span className={styles.name}>{name}</span>
-            <span className={styles.price}>{price}</span>
+            <span className={styles.price}>{`${numberFormat(price)}원`}</span>
           </div>
         </div>
         {item

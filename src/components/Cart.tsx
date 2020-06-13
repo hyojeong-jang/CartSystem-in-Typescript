@@ -2,11 +2,16 @@ import React from 'react';
 import useCart from '../hooks/useCart';
 
 import ItemCart from './ItemCart';
+import DiscountCart from './DiscountCart';
+import TotalAmount from './TotalAmount';
+
+import { totalAmount } from '../utils/helper'
 
 const Cart = () => {
   const { items, discounts } = useCart();
 
   return (
+    <>
     <main>
       <section>
         {items.map((item, idx) => (
@@ -18,7 +23,7 @@ const Cart = () => {
           />
         ))}
       </section>
-      {/* <section>
+      <section>
         {discounts.map((discount, idx) => (
           <DiscountCart
             key={idx}
@@ -26,9 +31,11 @@ const Cart = () => {
             rate={discount.rate}
           />
         ))}
-      </section> */}
+      </section>
     </main>
+    <TotalAmount total={totalAmount(items)} />
+  </>
   );
-}
+};
 
 export default Cart

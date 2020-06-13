@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Item } from '../types/index';
 import SelectBox from './SelectBox'
 import { updateItem, deleteItem } from '../modules/cart';
+import { numberFormat } from '../utils/helper';
 
 import styles from './css/ItemCart.module.css';
 
@@ -32,7 +33,7 @@ const ItemCart = ({ name, price, count }: Item) => {
       <ul className={styles.itemContainer}>
         <div className={styles.text}>
           <span>{name}</span>
-          <span className={styles.price}>{price * count}</span>
+          <span className={styles.price}>{`${numberFormat(price * count)}원`}</span>
         </div>
         <div
           onClick={onClick}

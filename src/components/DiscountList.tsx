@@ -30,7 +30,7 @@ const DiscountList = ({ name, rate }: Discount) => {
           />
           <div className={styles.text}>
             <span className={styles.name}>{name}</span>
-            <span className={styles.rate}>{rate}</span>
+            <span className={styles.rate}>{`${Math.round(rate * 100)}%`}</span>
           </div>
         </div>
       </div>
