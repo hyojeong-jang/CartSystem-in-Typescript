@@ -19,4 +19,3 @@ export const discount = (price: number, rate: number): string => {
   const resultPrice = price - savePrice;
   return  `-${numberFormat(Math.round(savePrice))}원`;
 }
-
