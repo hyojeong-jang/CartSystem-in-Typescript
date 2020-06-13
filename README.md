@@ -37,6 +37,8 @@ UseSelector나 UseDispatch를 사용하여 간단한 읽기와 업데이트를 �
 UseState와 UseEffect를 Custom Hooks내부에서 사용하여 모든 State를 관리함과 동시에 Container에 종속되지 않고 재사용성을 높이는 컴포넌트로 확장하고 싶습니다.
 
 - Redux Ducks 패턴 도입<br/>
+평소에 Redux를 사용하며 가장 불편함을 느꼈던 구조상의 문제를 개선할 수 있는 방법을 사용해보았습니다.<br/>
+기능을 기준으로 모듈화하였고 때문에 가독성과 유지,보수성이 좋아짐을 느꼈습니다.<br/>
 
 
 <a name='features'></a>
