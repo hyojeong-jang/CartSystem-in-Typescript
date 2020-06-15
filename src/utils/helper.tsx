@@ -23,8 +23,6 @@ export const discount = (price: number, rate: number): number => {
   // return  `-${numberFormat(Math.round(savePrice))}원`;
   return savePrice
 }
-<<<<<<< HEAD
-=======
 
 export const applyDiscount = (total: number, discounts: Discount[]): number => {
   let totalDiscount: number = 0;
@@ -36,4 +34,3 @@ export const applyDiscount = (total: number, discounts: Discount[]): number => {
 
   return total - totalDiscount;
 }
->>>>>>> feature/mainCart
