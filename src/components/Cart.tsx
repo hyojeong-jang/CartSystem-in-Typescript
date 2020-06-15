@@ -5,13 +5,13 @@ import ItemCart from './ItemCart';
 import DiscountCart from './DiscountCart';
 import TotalAmount from './TotalAmount';
 
-import { totalAmount } from '../utils/helper'
+import { totalAmount, applyDiscount } from '../utils/helper'
 
 const Cart = () => {
   const { items, discounts } = useCart();
 
   return (
-    <>
+  <>
     <main>
       <section>
         {items.map((item, idx) => (
@@ -33,7 +33,7 @@ const Cart = () => {
         ))}
       </section>
     </main>
-    <TotalAmount total={totalAmount(items)} />
+    <TotalAmount total={applyDiscount(totalAmount(items),discounts) } />
   </>
   );
 };
