@@ -1,8 +1,10 @@
-import { Item } from '../types/index';
+import { Item, Discount} from '../types/index';
 
 export const numberFormat = (price: number) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
+
+
 
 export const totalAmount = (items: Item[]): number => {
   let total: number = 0;
@@ -11,6 +13,7 @@ export const totalAmount = (items: Item[]): number => {
     total += ( item.price * item.count );
     if (idx === items.length - 1) return total;
   })
+
   return total;
 };
 

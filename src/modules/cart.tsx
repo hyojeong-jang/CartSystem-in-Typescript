@@ -66,7 +66,7 @@ export const deleteDiscount = (discount: string) => ({
 
 const initialState: types.Cart = {
   items: [],
-  discounts: []
+  discounts: [],
 }
 
 export const cartReducer = (
@@ -102,7 +102,7 @@ export const cartReducer = (
     case FETCH_DISCOUNT:
       return {
         ...state,
-        discounts: state.discounts.concat(action.payload)
+        discounts: state.discounts.concat(action.payload),
       };
     case DELETE_DISCOUNT:
       return {

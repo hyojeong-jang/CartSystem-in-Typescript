@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { RootState } from '../modules/index';
 import { Item } from '../types/index';
 
 import { fetchItem } from '../modules/cart'

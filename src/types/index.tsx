@@ -35,3 +35,17 @@ export interface Item {
   name: string
   price: number
 }
+
+export interface ApplyDiscount {
+  title: string
+  item: Item
+}
+
+export interface DiscountDetail {
+  title: string
+  items: Item[]
+}
+
+export interface DiscountDetailState {
+  detail: DiscountDetail[]
+}

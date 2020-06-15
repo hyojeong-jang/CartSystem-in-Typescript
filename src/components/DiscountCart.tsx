@@ -11,7 +11,7 @@ const DiscountCart = ({ name, rate }: Discount) => {
   const { items } = useCart();
 
   const [ isOpened, setIsOpened ] = useState(false);
-  const onClick = useCallback(() => setIsOpened(!isOpened), [])
+  const onClick = useCallback(() => setIsOpened(!isOpened), [isOpened]);
 
   return (
     <>
@@ -25,11 +25,19 @@ const DiscountCart = ({ name, rate }: Discount) => {
             </span>
           </div>
           <div
-          onClick={onClick}
-          className={styles.count}
-        >수정</div>
+            onClick={onClick}
+            className={styles.count}
+          >수정</div>
         </ul>
       </main>
+      {
+        isOpened
+        && <SelectDiscount
+          title={name}
+          items={items}
+          onClose={onClick}
+        />
+      }
     </>
   );
 };
