@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+ul {
+  padding: 0;
+}
+
+.title {
+  padding-top: 10px;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.name {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.price {
+  width: 100%;
+  margin-left: 30px;
+  font-size: 13px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.delete, .ok {
+  border: none;
+  background-color: white;
+  padding-bottom: 10px;
+  width: 50%;
+  cursor: pointer;
+}
+
+.delete {
+  color: palevioletred;
+}
